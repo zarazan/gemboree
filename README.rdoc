@@ -7,18 +7,15 @@ Forking and pushing encouraged. Proudly supported by Brockton Creative Group.
 === Installation
 Add to your Gemfile.
 
-	gem 'gemboree', :git => 'git://github.com/brocktoncg/gemboree.git'
+  gem 'gemboree', :git => 'git://github.com/brocktoncg/gemboree.git'
 
 Run a bundle install.
 Create resources with the scaffolding generator as normal.
 
-	rails g scaffold resource_name
+  rails g scaffold resource_name
 
-=== Team
+== Team
 Kyle Zarazan, Brockton Creative Group[http://brocktoncg.com]
 
-=== Bugs
-To file a bug report, go to the issues[http://github.com/brocktoncg/gemboree/issues] page.
-
-== License
+= License
 MIT
