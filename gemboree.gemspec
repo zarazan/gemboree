@@ -1,14 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "gemboree/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "gemboree"
   s.version     = Gemboree::VERSION
-  s.authors     = ["Kyle Zarazan"]
-  s.email       = ["kyle@brocktoncg.com"]
+  s.authors     = ["Kyle Zarazan", "John Resman"]
+  s.email       = "hello@brocktoncg.com"
   s.homepage    = "http://brocktoncg.com"
   s.summary     = "Gem based jamboree"
   s.description = "Rails based boilerplate for using boostrap, cancan, and will_paginate together."
@@ -19,6 +17,4 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.8"
   s.add_dependency "cancan"
   s.add_dependency "will_paginate"
-
-  s.add_development_dependency "sqlite3"
 end
