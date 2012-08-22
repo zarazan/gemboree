@@ -1,0 +1,32 @@
+<h1>Listing <%= plural_table_name %></h1>
+
+<div class="row-fluid">
+
+<table class="table">
+    <tr>
+  <% attributes.each do |attribute| -%>
+      <th><%%= sortable '<%= attribute.name %>' %></th>
+  <% end -%>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
+  <% attributes.each do |attribute| -%>
+      <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+  <% end -%>
+      <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
+      <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-edit' %></td>
+      <td><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-destroy' %></td>
+    <%% end %>
+
+</table>
+
+<%%= will_paginate  @<%= plural_table_name %> %>
+
+<div class="form-actions">
+  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, class: 'btn btn-success' %>
+</div>
+
+</div><!--/.row-fluid -->

@@ -1,0 +1,25 @@
+<%%= form_for(@<%= singular_table_name %>, :html => { class: 'form-horizontal' }) do |f| %>
+
+  <%%= render 'layouts/errors', :target => @<%= singular_table_name %> %>
+
+  <fieldset>
+
+<% attributes.each do |attribute| -%>
+  <div class="control-group">
+    <%%= f.label :<%= attribute.name %>, class: 'control-label' %>
+    <div class="controls">
+      <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+    </div>
+  </div>
+<% end -%>
+
+  </fieldset>
+
+  <div class="form-actions">
+	<div class="btn-group">
+  	  <%%= link_to 'Cancel', <%= index_helper %>_path, class: 'btn' %>
+      <%%= f.submit class: 'btn btn-success' %>
+	</div>
+  </div>
+
+<%% end %>

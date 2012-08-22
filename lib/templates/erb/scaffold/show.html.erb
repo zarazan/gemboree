@@ -1,0 +1,24 @@
+<div class="row-fluid">
+
+  <div class="span6">
+	<dl class="dl-horizontal">
+		
+  <% attributes.each do |attribute| -%>
+	  <dt><%= attribute.human_name %></dt>
+	  <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+	
+  <% end -%>
+
+	</dl>
+  </div>
+
+  <div class="span4">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+	    <li><%%= link_to '<i class="icon-list"></i> <%= singular_table_name.capitalize %> Index'.html_safe, <%= index_helper %>_path %></li>
+		<li><%%= link_to '<i class="icon-list"></i> Edit'.html_safe, edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></li>
+	  </ul>
+    </div><!--/.well -->
+  </div>
+
+</div><!--/.row-fluid -->
