@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Gemboree::VERSION
   s.authors     = ["Kyle Zarazan"]
   s.email       = ["kyle@brocktoncg.com"]
-  s.homepage    = "brocktoncg.com"
+  s.homepage    = "http://brocktoncg.com"
   s.summary     = "Gem based jamboree"
   s.description = "Rails based boilerplate for using boostrap, cancan, and will_paginate together."
 
