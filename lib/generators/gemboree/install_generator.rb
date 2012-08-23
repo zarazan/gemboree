@@ -4,10 +4,10 @@ module Gemboree
     
       def setup_home_page
         create_file "app/controllers/home_controller.rb" do
-          class HomeController < ApplicationController
+          "class HomeController < ApplicationController
             def index
             end
-          end
+          end"
         end
         empty_directory "app/views/home/"
         create_file "app/views/home/index.html.erb", "<h1>Gemboree Initiated</h1>"
