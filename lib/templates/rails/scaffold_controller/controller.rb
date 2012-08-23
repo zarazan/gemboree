@@ -10,7 +10,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @<%= plural_table_name %> = <%= orm_class.all(class_name) %>.order("#{sort_column} #{sort_direction}").page(params[:page])
+    @<%= plural_table_name %> = <%= singular_table_name.capitalize %>.order("#{sort_column} #{sort_direction}").page(params[:page])
     respond_to do |format|
       format.html
       format.json { render json: <%= "@#{plural_table_name}" %> }
@@ -71,7 +71,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 private
 
   def sort_column
-    <%= orm_class %>.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    <%= singular_table_name.capitalize %>.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
   end
 
   def sort_direction
