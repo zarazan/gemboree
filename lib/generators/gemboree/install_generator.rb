@@ -21,10 +21,6 @@ module Gemboree
         insert_into_file "app/models/ability.rb", "\n  can :manage, :all", :after => "def initialize(user)"
         insert_into_file "app/controllers/application_controller.rb", "\n  def current_user\n    nil\n  end", :after => "protect_from_forgery"
       end
-      
-      def copy_error_view
-        copy_file "../../../app/views/layouts/_errors.html.erb", "app/views/layouts/_errors.html.erb"
-      end
         
       def use_thin
         gem "thin"

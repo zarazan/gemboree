@@ -1,5 +1,5 @@
 module Gemboree
-  class Railtie < Rails::Railtie
+  class Engine < Rails::Engine
     require 'cancan'
     require 'will_paginate'
     config.app_generators do |g|
