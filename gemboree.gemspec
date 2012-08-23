@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.8"
-  s.add_dependency "cancan"
-  s.add_dependency "will_paginate"
+  s.add_dependency "cancan", "~> 1.6.8"
+  s.add_dependency "will_paginate", "~> 3.0.3"
 end

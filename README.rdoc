@@ -1,22 +1,35 @@
 = Gemboree
 
-Gemboree was created to streamline the process of starting a new Rails website with twitter-bootstrap included in its own asset pipeline and view generators modified based on bootstrap. 
+Gemboree was created to streamline the process of prototyping a new Rails website with twitter-bootstrap included in its own asset pipeline and view generators modified based on bootstrap. 
 The controller generator is also modified to include cancan, pagination, and index sorting by default.
-Forking and pushing encouraged. Proudly supported by Brockton Creative Group.
+Push requests encouraged.
 
 == Installation
-Add to your Gemfile.
+
+Create a new rails site:
+
+  rails new site_name
+
+Add to your Gemfile:
 
   gem 'gemboree', :git => 'git://github.com/brocktoncg/gemboree.git'
 
-Run a bundle install. 
+Run a bundle install:
 
-Create resources with the scaffolding generator as normal.
+  bundle install
+
+Run the install generator:
+
+  rails g gemboree:install
+
+Create resources with the scaffolding generator as normal: 
 
   rails g scaffold resource_name
 
 == Team
-Kyle Zarazan, {Brockton Creative Group}[http://brocktoncg.com]
+
+Kyle Zarazan, Technical Director, {Brockton Creative Group}[http://brocktoncg.com]
 
 == License
+
 MIT

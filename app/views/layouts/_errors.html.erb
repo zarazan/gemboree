@@ -2,7 +2,7 @@
 <div id="errorExplanation">  
 	<h2><%= pluralize(target.errors.count, "Error") %> prohibited this form from submission:</h2>  
 	<ul class="errors_explained">  
-		<% target.errors.full_messages.each do |message| %>  
+		<% target.errors.full_messages.each do |message| %>
 			<li><%= message %></li>  
   		<% end %>  
   	</ul>  
