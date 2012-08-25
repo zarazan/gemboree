@@ -2,8 +2,6 @@
 
   <%%= render 'layouts/errors', :target => @<%= singular_table_name %> %>
 
-  <fieldset>
-
 <% attributes.each do |attribute| -%>
   <div class="control-group">
     <%%= f.label :<%= attribute.name %>, class: 'control-label' %>
@@ -12,8 +10,6 @@
     </div>
   </div>
 <% end -%>
-
-  </fieldset>
 
   <div class="form-actions">
 	<div class="btn-group">

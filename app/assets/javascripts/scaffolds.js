@@ -1,3 +1,5 @@
+$(function() {
+
 //Button loading indicator
 $('.btn').attr("data-loading-text", "loading...");
 $('.btn').live('click', function(e) { $(this).button('loading') });
@@ -13,3 +15,5 @@ function(e) { $(this).removeClass('btn-danger'); });
 //Add sort direction indicators
 $('.current.asc').before('<i class="icon-arrow-up">');
 $('.current.desc').before('<i class="icon-arrow-down">');
+
+});

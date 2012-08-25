@@ -1,0 +1,14 @@
+/* we are people, not machines */
+/* humanstxt.org */
+
+/* SITE */
+  HTML5 Validated
+  Proudly built on Rails -> http://rubyonrails.org/
+
+/* TEAM */
+ ____                 _    _              
+| __ ) _ __ ___   ___| | _| |_ ___  _ __  
+|  _ \| '__/ _ \ / __| |/ / __/ _ \| '_ \ 
+| |_) | | | (_) | (__|   <| || (_) | | | |
+|____/|_|  \___/ \___|_|\_\\__\___/|_| |_|
+             Creative Group

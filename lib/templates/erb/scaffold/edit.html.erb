@@ -14,7 +14,7 @@
 		<li><%%= link_to '<i class="icon-list"></i> <%= singular_table_name.capitalize %> Index'.html_safe, <%= index_helper %>_path %></li>
         <li><%%= link_to '<i class="icon-eye-open"></i> Show'.html_safe, @<%= singular_table_name %> %></li>
         <li><%%= link_to '<i class="icon-minus"></i> Destroy'.html_safe, @<%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-		<li><%%= link_to '<i class="icon-plus"></i> New <%= human_name %>', new_<%= singular_table_name %>_path %></li>
+		<li><%%= link_to '<i class="icon-plus"></i> New <%= human_name %>'.html_safe, new_<%= singular_table_name %>_path %></li>
       </ul>
     </div><!--/.well -->
   </div>

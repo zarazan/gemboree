@@ -1,29 +1,39 @@
 module Gemboree
   module Generators
     class InstallGenerator < Rails::Generators::Base
-    
+
       def setup_home_page
-        create_file "app/controllers/home_controller.rb", "class HomeController < ApplicationController\n  def index\n  end\nend"
+        remove_file "public/index.html"
+        remove_file "app/assets/images/rails.png"
+        remove_file "app/views/layouts/application.html.erb"
         empty_directory "app/views/home/"
-        create_file "app/views/home/index.html.erb", "<h1>Gemboree Initiated</h1>"
-        remove_file 'public/index.html'
-        remove_file 'app/assets/images/rails.png'
+        copy_file "home_controller.rb", "app/controllers/home_controller.rb"
+        copy_file "index.html.erb", "app/views/home/index.html.erb"
+        copy_file "application.html.erb", "app/views/layouts/application.html.erb"
         route "root :to => 'home#index'"
       end
-      
-      def setup_asssets
-        insert_into_file "app/assets/javascripts/application.js", "\n //= require gemboree", :after => "//= require jquery_ujs"
-        insert_into_file "app/assets/stylesheets/application.css", "\n  *= require gemboree", :after => " *= require_self"
-      end
-    
-      def setup_cancan
-        generate "cancan:ability"
-        insert_into_file "app/models/ability.rb", "\n  can :manage, :all", :after => "def initialize(user)"
-        insert_into_file "app/controllers/application_controller.rb", "\n  def current_user\n    nil\n  end", :after => "protect_from_forgery"
-      end
-        
+
       def use_thin
         gem "thin"
+      end
+
+      def setup_asssets
+        insert_into_file "app/assets/javascripts/application.js", "\n//= require gemboree", :after => "//= require jquery_ujs"
+        insert_into_file "app/assets/stylesheets/application.css", "\n*= require gemboree", :after => "*= require_self"
+      end
+
+      def setup_devise
+        generate "devise:install"
+        generate "devise", "User"
+      end
+
+      def setup_cancan
+        copy_file "ability.rb", "app/models/ability.rb"
+      end
+
+      def setup_roles
+        generate "model", "Roles name:string level:integer"
+        generate "model", "UserRoles user_id:integer role_id:integer"
       end
       
     end
