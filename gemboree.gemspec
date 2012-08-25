@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "cancan", "~> 1.6.8"
   s.add_dependency "will_paginate", "~> 3.0.3"
   s.add_dependency "simple_form", "~> 2.0.2"
+  s.add_dependency "slim", "~> 1.2.2"
 end

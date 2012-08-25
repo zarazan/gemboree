@@ -8,8 +8,8 @@ module Gemboree
         remove_file "app/views/layouts/application.html.erb"
         empty_directory "app/views/home/"
         copy_file "home_controller.rb", "app/controllers/home_controller.rb"
-        copy_file "index.html.erb", "app/views/home/index.html.erb"
-        copy_file "application.html.erb", "app/views/layouts/application.html.erb"
+        copy_file "index.slim", "app/views/home/index.slim"
+        copy_file "application.slim", "app/views/layouts/application.slim"
         route "root :to => 'home#index'"
       end
 
