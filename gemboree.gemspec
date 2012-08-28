@@ -5,7 +5,7 @@ require "gemboree/version"
 Gem::Specification.new do |s|
   s.name        = "gemboree"
   s.version     = Gemboree::VERSION
-  s.authors     = ["Kyle Zarazan", "John Resman"]
+  s.authors     = "Kyle Zarazan"
   s.email       = "hello@brocktoncg.com"
   s.homepage    = "http://brocktoncg.com"
   s.summary     = "Gem based jamboree"
@@ -18,6 +18,4 @@ Gem::Specification.new do |s|
   s.add_dependency "devise", "~> 2.1.2"
   s.add_dependency "cancan", "~> 1.6.8"
   s.add_dependency "will_paginate", "~> 3.0.3"
-  s.add_dependency "simple_form", "~> 2.0.2"
-  s.add_dependency "slim", "~> 1.2.2"
 end

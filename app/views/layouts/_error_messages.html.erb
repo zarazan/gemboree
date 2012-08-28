@@ -1,0 +1,20 @@
+<% if notice %>
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">x</button>
+<strong><%= notice %></strong>
+</div>
+<% end %>
+
+<% if alert %>
+<div class="alert alert-alert">
+<button type="button" class="close" data-dismiss="alert">x</button>
+<strong><%= alert %></strong>
+</div>
+<% end %>
+
+<% if flash[:error] %>
+<div class="alert alert-error">
+<button type="button" class="close" data-dismiss="alert">x</button>
+<strong><%= flash[:error] %></strong>
+</div>
+<% end %>

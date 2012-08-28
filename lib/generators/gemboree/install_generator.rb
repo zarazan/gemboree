@@ -6,20 +6,19 @@ module Gemboree
         remove_file "public/index.html"
         remove_file "app/assets/images/rails.png"
         remove_file "app/views/layouts/application.html.erb"
-        empty_directory "app/views/home/"
         copy_file "home_controller.rb", "app/controllers/home_controller.rb"
-        copy_file "index.slim", "app/views/home/index.slim"
-        copy_file "application.slim", "app/views/layouts/application.slim"
+        copy_file "index.html.erb", "app/views/home/index.html.erb"
+        copy_file "application.html.erb", "app/views/layouts/application.html.erb"
         route "root :to => 'home#index'"
       end
 
-      def use_thin
-        gem "thin"
-      end
-
       def setup_asssets
-        insert_into_file "app/assets/javascripts/application.js", "\n//= require gemboree", :after => "//= require jquery_ujs"
-        insert_into_file "app/assets/stylesheets/application.css", "\n*= require gemboree", :after => "*= require_self"
+        insert_into_file "app/assets/javascripts/application.js", :after => "jquery_ujs\n" do
+           "//= require gemboree\n"
+        end
+        insert_into_file "app/assets/stylesheets/application.css", :after => "require_self\n" do
+          " *= require gemboree\n"
+        end
       end
 
       def setup_devise
@@ -32,8 +31,13 @@ module Gemboree
       end
 
       def setup_roles
-        generate "model", "Roles name:string level:integer"
-        generate "model", "UserRoles user_id:integer role_id:integer"
+        generate "gemboree:migration"
+        insert_into_file "app/models/user.rb", :after => "ActiveRecord::Base\n" do
+%{  acts_as_actor
+  has_many :user_roles, :dependent => :destroy
+  has_many :roles, :through => :user_roles
+}
+        end
       end
       
     end

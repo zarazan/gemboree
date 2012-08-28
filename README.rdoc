@@ -27,10 +27,6 @@ Create resources with the scaffolding generator as normal:
 
   rails g scaffold resource_name
 
-Migrate the database:
-
-  rake db:migrate
-
 Byah.
 
 == Team
