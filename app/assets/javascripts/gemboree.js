@@ -6,8 +6,8 @@
 //= require bootstrap-dropdown.js
 //= require bootstrap-modal.js
 //= require bootstrap-tooltip.js
-//= require bootstrap-popover.js
 //= require bootstrap-scrollspy.js
 //= require bootstrap-tab.js
 //= require bootstrap-typeahead.js
+//= require bootstrap-popover.js
 //= require_tree .
