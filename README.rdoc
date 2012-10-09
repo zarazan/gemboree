@@ -27,19 +27,17 @@ Create resources with the scaffolding generator as normal:
 
   rails g scaffold resource_name
 
-== Acts_As_Actor
+== acts_as_actor
 
-	Role.create(name: 'Admin', access_level: 2)
+  access_level
 
-	access_level
+  has_access?(level)
 
-	has_access?(level)
+  has_role?(name)
 
-	has_role?(name)
+  add_role(name)
 
-	add_role(name)
-
-	remove_role(name)
+  remove_role(name)
 
 == Team
 
