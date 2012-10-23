@@ -1,16 +1,24 @@
 <!doctype html>
 <html>
-
   <head>
     <title>Gemboree</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <%= link_to 'Gemboree', root_path, class: 'brand' %>
+        <ul class="nav">
+          <li><%= link_to 'Home', root_path, class: active_page?(:index) %></li>
+          <li><%= link_to 'Page 1', '#', class: active_page?(:page_1) %></li>
+          <li><%= link_to 'Page 2', '#', class: active_page?(:page_2) %></li>
+        </ul>
+      </div>
+    </div>
+    <%= render 'layouts/error_messages' %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
-
 </html>

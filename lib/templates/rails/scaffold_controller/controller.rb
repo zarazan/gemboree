@@ -7,9 +7,9 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   load_and_authorize_resource
   helper_method :sort_column, :sort_direction
-  
+
   def index
-    @<%= plural_table_name %> = <%= singular_table_name.capitalize %>.order("#{sort_column} #{sort_direction}").page(params[:page])
+    @<%= plural_table_name %> = <%= controller_class_name.singularize %>.order("#{sort_column} #{sort_direction}").page(params[:page])
     respond_to do |format|
       format.html
       format.json { render json: <%= "@#{plural_table_name}" %> }
@@ -70,7 +70,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 private
 
   def sort_column
-    <%= singular_table_name.capitalize %>.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    <%= controller_class_name.singularize %>.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
   end
 
   def sort_direction
