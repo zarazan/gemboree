@@ -3,7 +3,7 @@ class ActsAsActor < ActiveRecord::Migration
   def change
     create_table :roles do |t|
       t.string :name, :null => false
-      t.integer :access_level, :default => 0
+      t.integer :access_level, :null => false, :default => 0
       t.timestamps
     end
 

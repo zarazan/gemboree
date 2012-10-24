@@ -1,6 +1,4 @@
 class Role < ActiveRecord::Base
-  
-	before_validation :default_access
 
   attr_accessible :name, :access_level
   
@@ -12,11 +10,5 @@ class Role < ActiveRecord::Base
   	:uniqueness => true
 
   validates :access_level, :presence => true
-
-private
-
-  def default_access
-  	self.access_level ||= 0
-  end
 
 end
