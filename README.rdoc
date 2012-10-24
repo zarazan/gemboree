@@ -1,11 +1,11 @@
 = Gemboree
 
 Gemboree was created to streamline the process of prototyping a new Rails website with devise, cancan, 
-will_paginate, and twitter-bootstrap included in its own asset pipeline. View generators are modified 
-based on bootstrap. The controller generator is also modified to include cancan, pagination, and index 
+will_paginate, and twitter-bootstrap included in its own asset pipeline. Rails view generators are modified 
+based on bootstrap. The rails defult controller generator is modified to include cancan, pagination, and index 
 sorting by default.
 
-== Installation
+== Initial Setup
 
 Create a new rails site:
 
@@ -23,21 +23,28 @@ Run the install generator:
 
   rails g gemboree:install
 
+
 Create resources with the scaffolding generator as normal: 
 
   rails g scaffold resource_name
 
 == acts_as_actor
 
-  access_level
+The install generator will setup devise with a 'User' model and an associated roles table. 
+User access levels can be accessed with the following commands:
 
-  has_access?(level)
+  current_user.access_level
 
-  has_role?(name)
+  current_user.has_access?(level)
 
-  add_role(name)
+  current_user.has_role?(name)
 
-  remove_role(name)
+  current_user.add_role(name)
+
+  current_user.remove_role(name)
+
+Modify access restrictions normally using the built in {cancan}[https://github.com/ryanb/cancan] gem.
+The ability.rb class has already been created for you.
 
 == Team
 
