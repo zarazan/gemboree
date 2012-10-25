@@ -1,16 +1,13 @@
 <div class="row-fluid">
 
-  <div class="span6">
-	<dl class="dl-horizontal">
-		
+<div class="span6">		
   <% attributes.each do |attribute| -%>
-	  <dt><%= attribute.human_name %></dt>
-	  <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
-	
+	<div>
+	  <strong><%= attribute.human_name %></strong>
+	  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+	</div>
   <% end -%>
-
-	</dl>
-  </div>
+</div>
 
   <div class="span4">
     <div class="well sidebar-nav">
