@@ -19,5 +19,6 @@ Gem::Specification.new do |s|
   s.add_dependency "cancan", "~> 1.6.8"
   s.add_dependency "will_paginate", "~> 3.0.3"
   s.add_dependency "bootstrap-will_paginate", "~> 0.0.9"
+  s.add_dependency "paperclip", "~> 3.0"
   
 end

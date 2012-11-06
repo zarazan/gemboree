@@ -3,6 +3,7 @@ require 'cancan'
 require 'will_paginate'
 require 'gemboree/version'
 require 'gemboree/acts_as_actor'
+require 'paperclip'
 
 module Gemboree
   
