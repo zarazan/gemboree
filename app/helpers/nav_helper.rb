@@ -1,7 +1,7 @@
 module NavHelper
 
-	def active_page?(page_name)
-		"active" if params[:action] == page_name
+	def active_link(controller, action)
+		'class="active"' if current_page?(:controller => controller, :action => action)
 	end
 
 end

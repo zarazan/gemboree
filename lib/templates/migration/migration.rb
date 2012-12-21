@@ -1,6 +1,7 @@
 class ActsAsActor < ActiveRecord::Migration
   
   def change
+
     create_table :roles do |t|
       t.string :name, :null => false
       t.integer :access_level, :null => false, :default => 0
@@ -12,6 +13,7 @@ class ActsAsActor < ActiveRecord::Migration
       t.references :role
       t.timestamps
     end
+    
   end
 
 end

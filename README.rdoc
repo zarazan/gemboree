@@ -28,6 +28,10 @@ Create resources with the scaffolding generator as normal:
 
   rails g scaffold resource_name
 
+Don't forget to migrate the database before you start the server:
+
+  rake db:migrate
+
 == acts_as_actor
 
 The install generator will setup devise with a 'User' model and an associated roles table. 

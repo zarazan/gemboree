@@ -2,7 +2,6 @@ $(function() {
 
 //Button loading indicator
 $('.btn').attr("data-loading-text", "loading...");
-//$('.btn').live('click', function(e) { $(this).button('loading') });
 
 //Change edit button to yellow on mouseover
 $(".btn-edit").hover(function(e) { $(this).addClass('btn-warning'); },
