@@ -9,6 +9,10 @@ module Gemboree
 
     module InstanceMethods
 
+      def role_name
+        roles.order('access_level desc').first.try(:name)
+      end
+
       def access_level
         roles.first.nil? ? 0 : roles.order('access_level desc').first.access_level
       end
@@ -26,13 +30,18 @@ module Gemboree
         role = Role.find_by_name(name)
         role ? roles << role : false
       end
-      
+
       def remove_role(name)
         role = has_role?(name)
         role ? UserRole.where(user_id: id, role_id: role.id).first.delete : false
       end
-      
+
+      def change_role(name)
+        roles.clear
+        add_role(name)
+      end
+
     end
-    
+
   end
 end
