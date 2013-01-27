@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gemboree (0.1.1)
+    gemboree (0.1.2)
       bootstrap-will_paginate (~> 0.0.9)
       cancan (~> 1.6.8)
       devise (~> 2.1.2)
