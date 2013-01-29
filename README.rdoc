@@ -2,7 +2,7 @@
 
 Gemboree was created to streamline the process of prototyping a new Rails website with devise, cancan, 
 will_paginate, and twitter-bootstrap included in its own asset pipeline. Rails view generators are modified 
-based on bootstrap. The rails defult controller generator is modified to include cancan, pagination, and index 
+based on bootstrap. The rails default controller generator is modified to include cancan, pagination, and index 
 sorting by default.
 
 == Initial Setup
