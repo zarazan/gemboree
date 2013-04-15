@@ -21,6 +21,10 @@ module Gemboree
         access_level >= level
       end
 
+      def has_role_access?(name)
+        has_access?(Role.find_by_name(name).access_level)
+      end
+
       def has_role?(name)
         roles.find_by_name(name)
       end

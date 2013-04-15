@@ -2,10 +2,10 @@
 
 <div class="row-fluid">
 
-<table class="table table-condensed">
+<table class="table table-condensed" width="100%">
     <tr>
   <% attributes.each do |attribute| -%>
-      <th><%%= sortable '<%= attribute.name %>' %></th>
+    <th><%%= sortable '<%= attribute.name %>' %></th>
   <% end -%>
       <th></th>
       <th></th>
@@ -14,7 +14,7 @@
 
   <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
   <% attributes.each do |attribute| -%>
-    <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+  <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
   <% end -%>
     <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
     <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-edit' %></td>

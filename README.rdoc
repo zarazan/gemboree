@@ -47,6 +47,10 @@ User access levels can be accessed with the following commands:
 
   current_user.remove_role(name)
 
+  current_user.role_name
+
+  current_user.change_role(name)
+
 Modify access restrictions normally using the built in {cancan}[https://github.com/ryanb/cancan] gem.
 The ability.rb class has already been created for you.
 
